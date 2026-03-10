@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能教案写作工具</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>📚 智能教案写作工具</h1>
+            <p>快速生成结构化教案，提高课堂设计效率</p>
+        </header>
+
+        <main class="main-content">
+            <div class="form-section">
+                <h2>教案信息填写</h2>
+                <form id="lessonForm">
+                    <div class="form-group">
+                        <label for="subject">学科:</label>
+                        <input 
+                            type="text" 
+                            id="subject" 
+                            required 
+                            placeholder="如: 数学、语文、英语等"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="grade">年级:</label>
+                        <select id="grade" required>
+                            <option value="">请选择年级</option>
+                            <option value="小学一年级">小学一年级</option>
+                            <option value="小学二年级">小学二年级</option>
+                            <option value="小学三年级">小学三年级</option>
+                            <option value="小学四年级">小学四年级</option>
+                            <option value="小学五年级">小学五年级</option>
+                            <option value="小学六年级">小学六年级</option>
+                            <option value="初中一年级">初中一年级</option>
+                            <option value="初中二年级">初中二年级</option>
+                            <option value="初中三年级">初中三年级</option>
+                            <option value="高中一年级">高中一年级</option>
+                            <option value="高中二年级">高中二年级</option>
+                            <option value="高中三年级">高中三年级</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="unit">单元/章节:</label>
+                        <input 
+                            type="text" 
+                            id="unit" 
+                            required 
+                            placeholder="如: 第一单元、第五章等"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="topic">课题:</label>
+                        <input 
+                            type="text" 
+                            id="topic" 
+                            required 
+                            placeholder="请输入课题名称"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="duration">课时:</label>
+                        <select id="duration" required>
+                            <option value="">请选择课时</option>
+                            <option value="1">1 课时</option>
+                            <option value="2">2 课时</option>
+                            <option value="3">3 课时</option>
+                            <option value="4">4 课时</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="studentCount">学生人数:</label>
+                        <input 
+                            type="number" 
+                            id="studentCount" 
+                            min="1" 
+                            required 
+                            placeholder="如: 30"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="objectives">教学目标:</label>
+                        <textarea 
+                            id="objectives" 
+                            required 
+                            placeholder="描述本节课的教学目标（知识、能力、情感等方面）"
+                            rows="3"
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="keyPoints">教学重点和难点:</label>
+                        <textarea 
+                            id="keyPoints" 
+                            required 
+                            placeholder="列出本节课的重点和难点"
+                            rows="3"
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">生成教案 ✨</button>
+                </form>
+            </div>
+
+            <div class="result-section" id="resultSection" style="display: none;">
+                <div class="result-header">
+                    <h2>生成的教案</h2>
+                    <button class="btn btn-secondary" id="downloadBtn">下载教案</button>
+                    <button class="btn btn-secondary" id="copyBtn">复制内容</button>
+                    <button class="btn btn-secondary" id="resetBtn">重新生成</button>
+                </div>
+                <div class="result-content" id="resultContent"></div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>💡 提示: 生成的教案是基础框架，建议根据实际情况进行修改和完善</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
